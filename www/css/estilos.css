@@ -1,0 +1,58 @@
+#contenido_dash{
+	background-image: url("../img/fondo.png");
+	background-repeat: no-repeat;
+	background-size: 500%;
+}
+#contenido_bienvenida{
+	background-image: url("../img/fondo.png");
+	background-repeat: no-repeat;
+	background-size: 500%;
+}
+
+div.tabla div{
+	padding: 12% 0px;
+	text-align: center;
+	background-color:#E8EBEA;
+	background-attachment: fixed;
+	background-size: 100%;
+	font-size: 30px;
+	font-family: impact;
+	color: #926037;
+	cursor: pointer;
+	width: 25%;
+	border:1px solid #926037;
+	opacity: 0.9;
+	
+}
+.vacio{
+	background-color: transparent !important;
+	border:none !important;
+}
+
+div#mismovimientos{
+	border:6px solid #926037;	
+	background-color: #F9F2EC;
+}
+div#mismovimientos span{
+	font-weight: bold;
+	font-size: 25px;
+	color: #926037;
+
+}
+a#nuevo{
+	background-color: #C38049;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+}
+
+/*estilos para el logotipo*/
+#jugar{
+	font-size: 70px;
+	font-family: impact;
+	text-decoration: none;
+	text-shadow:1px 1px white;
+	display: block;
+	margin-top: 20px;
+	opacity: 0.9;
+}
