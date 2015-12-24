@@ -12,10 +12,10 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
 
     function tiempo() {
         var segundero = document.getElementById("segundos");
-        if (segundero != null)
+        if (segundero !== null)
             segundero.innerText = contador_segundos;
         var minutero = document.getElementById("minutos");
-        if (minutero != null)
+        if (minutero !== null)
             innerText = contador_minutos;
         if (contador_segundos === 59) {
             contador_minutos++;
@@ -58,25 +58,51 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
     }
 
     $scope.nuevo = function () {
-        reiniciaTiempo();
-        arreglo_numeros.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
-        for (j = 1; j <= 16; j++) {
-            if (document.getElementById("p" + j).getAttribute("class").indexOf("vacio") < 0) {
-                //GENERAR ALEATORIO
-                aleatorio = Math.floor((Math.random() * (arreglo_numeros.length - 1)) + 0);
-                num = arreglo_numeros[aleatorio];
-                arreglo_numeros.splice(aleatorio, 1);
-                //colocamos el numero
-                document.getElementById("p" + j).innerText = num;
-            }
-        }
+        generar();
 
-        //Reiniciamos los movimientos
+        //Reiniciamos los movimientos         
         movimientos = 0;
         document.getElementById("movimientos").innerText = movimientos;
     };
 
     //---------------trabajando con javascript---------------------------
+
+    function verificarGanarJuego() {
+        filasCorrectas = 0;
+        if (document.getElementById("p1").innerText === "1" &&
+                document.getElementById("p2").innerText === "2" &&
+                document.getElementById("p3").innerText === "3" &&
+                document.getElementById("p4").innerText === "4") {
+            filasCorrectas++;
+        }
+        if (document.getElementById("p5").innerText === "5" &&
+                document.getElementById("p6").innerText === "6"
+                && document.getElementById("p7").innerText === "7" &&
+                document.getElementById("p8").innerText === "8") {
+            filasCorrectas++;
+        }
+        if (document.getElementById("p9").innerText === "9" &&
+                document.getElementById("p10").innerText === "10" &&
+                document.getElementById("p11").innerText === "11" &&
+                document.getElementById("p12").innerText === "12") {
+            filasCorrectas++;
+        }
+        if (document.getElementById("p13").innerText === "13" &&
+                document.getElementById("p14").innerText === "14" &&
+                document.getElementById("p15").innerText === "15") {
+            filasCorrectas++;
+        }
+
+        //si fue 4 es por que gano
+        if (filasCorrectas === 4) {
+            alert("Has ganado el juego");
+            alert("Movimiento: " + movimientos);
+            alert("Tiempo: " + contador_minutos + ":" + contador_segundos);
+            //inicializamos nuevamente el juego
+            generar();
+        }
+    }
+
     $scope.mensaje = function (event) {
         //obtendremos la clases
         posicion = parseInt(event.target.getAttribute("posicion"));
@@ -196,30 +222,9 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
             }
         }//cierre de mover hacia abajo
 
-        filasCorrectas = 0;
-        if (document.getElementById("p1").innerText == "1" && document.getElementById("p2").innerText == "2" && document.getElementById("p3").innerText == "3" && document.getElementById("p4").innerText == "4") {
-            filasCorrectas++;
-        }
-        if (document.getElementById("p5").innerText == "5" && document.getElementById("p6").innerText == "6" && document.getElementById("p7").innerText == "7" && document.getElementById("p8").innerText == "8") {
-            filasCorrectas++;
-        }
-        if (document.getElementById("p9").innerText == "9" && document.getElementById("p10").innerText == "10" && document.getElementById("p11").innerText == "11" && document.getElementById("p12").innerText == "12") {
-            filasCorrectas++;
-        }
-        if (document.getElementById("p13").innerText == "13" && document.getElementById("p14").innerText == "14" && document.getElementById("p15").innerText == "15") {
-            filasCorrectas++;
-        }
-
-        //si fue 4 es por que gano
-        if (filasCorrectas === 4) {
-            alert("Has ganado el juego");
-            alert("Movimiento: " + movimientos);
-            alert("Tiempo: " + contador_minutos + ":" + contador_segundos);
-
-            //inicializamos nuevamente el juego
-            generar();
-        }
+        verificarGanarJuego();
 
     };
+
     /*----------------------CIERRE DE LA LOGICA DEL JUEGO------------------------------------*/
 });
