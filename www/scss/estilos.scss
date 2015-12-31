@@ -3,7 +3,19 @@
 //////////////////////////////////////////////////
 
 $cafe:#926037;
-
+$rosita:#ED008C;
+$naranja:#EB5731;
+$turquesa:#24AAE1;
+$verde_pasto:#35B548;
+$moradouva:#8E288D;
+//colores para las letras
+$colores-letras: (
+$rosita,
+$naranja,
+$turquesa,
+$verde_pasto,
+$moradouva
+);
 //////// Estilos para página perfil //////////
 
 
@@ -17,16 +29,114 @@ body{
         margin-bottom: 2.2rem;
     }
 }
+#botones_comienzo{
+    .opcion_menu{
+        font-size: 5rem;
+        font-family: impact;
+        text-decoration: none;
+        text-shadow:0.16rem 0.16rem white;
+        display: block;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+}
+#botones_comienzo{
+    :nth-of-type(1){
+        :nth-child(1){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(2){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(3){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(4){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(5){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(6){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(7){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+    }
 
-.opcion_menu{
-    font-size: 5rem;
-    font-family: impact;
-    text-decoration: none;
-    text-shadow:0.16rem 0.16rem white;
-    display: block;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    opacity: 0.9;
+    :nth-of-type(2){
+        :nth-child(1){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(2){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(3){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(4){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(5){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(6){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(7){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+    }
+
+    :nth-of-type(3){
+        :nth-child(1){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(2){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(3){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(4){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(5){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(6){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(7){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+    }
+    
+    :nth-of-type(4){
+        :nth-child(1){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(2){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(3){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(4){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(5){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(6){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+        :nth-child(7){
+            color: nth( $colores-letras, random( length( $colores-letras) ) );
+        }
+    }
 }
 
 .fondoDePaisaje{

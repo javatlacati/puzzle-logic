@@ -46,9 +46,12 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
         reiniciaTiempo();
         arreglo_numeros.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
         for (j = 1; j <= 16; j++) {
-            if (document.getElementById("p" + j).getAttribute("class").indexOf("vacio") < 0) {
+            if (document.getElementById("p" + j)
+                    .getAttribute("class").indexOf("vacio") < 0) {
                 //GENERAR ALEATORIO
-                aleatorio = Math.floor((Math.random() * (arreglo_numeros.length - 1)) + 0);
+                aleatorio = Math.floor(
+                        (Math.random() * (arreglo_numeros.length - 1))
+                        );
                 num = arreglo_numeros[aleatorio];
                 arreglo_numeros.splice(aleatorio, 1);
                 //colocamos el numero
@@ -110,7 +113,9 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
 
         //tabla padre
         padre = event.target.parentNode.getAttribute("id");
-        valor_tabla_padre = parseInt(event.target.parentNode.getAttribute("id").substring(5, 999));
+        valor_tabla_padre = parseInt(
+                event.target.parentNode.getAttribute("id").substring(5, 999)
+                );
 
 
         //obtendremos los valores a evaluar
@@ -132,22 +137,30 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
             fil_abajo = parseInt(valor_tabla_padre + 1);
         }
 
-
-
         //obtenemos la posicion derecha
-        fila_actual = document.getElementById("tabla" + valor_tabla_padre).getElementsByTagName("div")[posicion];
+        fila_actual =
+                document.getElementById("tabla" + valor_tabla_padre)
+                .getElementsByTagName("div")[posicion];
         if (posicion < 3) {
-            micol_derecha = document.getElementById("tabla" + valor_tabla_padre).getElementsByTagName("div")[col_derecha];
+            micol_derecha =
+                    document.getElementById("tabla" + valor_tabla_padre)
+                    .getElementsByTagName("div")[col_derecha];
         }
         if (posicion > 0) {
-            micol_izquierda = document.getElementById("tabla" + valor_tabla_padre).getElementsByTagName("div")[col_izquierda];
+            micol_izquierda =
+                    document.getElementById("tabla" + valor_tabla_padre)
+                    .getElementsByTagName("div")[col_izquierda];
         }
 
         if ((valor_tabla_padre - 1) >= 1) {
-            fila_arriba = document.getElementById("tabla" + fil_arriba).getElementsByTagName("div")[posicion];
+            fila_arriba =
+                    document.getElementById("tabla" + fil_arriba)
+                    .getElementsByTagName("div")[posicion];
         }
         if ((valor_tabla_padre + 1) <= 4) {
-            fila_abajo = document.getElementById("tabla" + fil_abajo).getElementsByTagName("div")[posicion];
+            fila_abajo =
+                    document.getElementById("tabla" + fil_abajo)
+                    .getElementsByTagName("div")[posicion];
         }
 
 
@@ -226,5 +239,5 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
 
     };
 
-    /*----------------------CIERRE DE LA LOGICA DEL JUEGO------------------------------------*/
+    /*-------------------CIERRE DE LA LOGICA DEL JUEGO-----------------------*/
 });
