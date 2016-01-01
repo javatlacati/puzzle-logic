@@ -3,12 +3,20 @@ angular.module("proyecto").config(function ($stateProvider, $urlRouterProvider) 
 
     return $stateProvider.state("dashboard", {
         url: "/dashboard",
-        templateUrl: "templates/dashboard.html",
-        controller: "CntrlDashboard"
+        templateUrl: "templates/dashboard.html"
+        //,controller: "CntrlDashboard"
     })
             .state("perfil", {
                 url: "/perfil",
                 templateUrl: "templates/perfil.html"
+            })
+            .state("settings", {
+                url: "/settings",
+                templateUrl: "templates/settings.html"
+            })
+            .state("score", {
+                url: "/score",
+                templateUrl: "templates/score.html"
             })
             .state("perfil_curso", {
                 url: "/perfil_curso",

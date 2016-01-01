@@ -8,9 +8,10 @@ $(document).ready(function () {
     //llenar los numeros
 
 
-    //haremos un each para generar los numeros 
+    /**Inicia un nuevo juego */
     function nuevo_juego() {
         $("#movimientos").text(movimientos);
+        //haremos un each para generar los numeros 
         $("table#tablero").find("tr").each(function (i) {
             //recorreremos ahora las columnas 
             $(this).find("td").each(function (j) {
