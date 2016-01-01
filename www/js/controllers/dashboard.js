@@ -8,8 +8,12 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
     tiempo();
     var esta_corriendo_el_tiempo = "si";
     generar();
-    //funcion para el tiempo
 
+    /**
+     * Controla el avance del tiempo.
+     * Cada segundo actualiza los valores de los contadores de minutos y 
+     * segundos para medir cuanto se trada el jugador en resolverlo.
+     */
     function tiempo() {
         var segundero = document.getElementById("segundos");
         if (segundero !== null)
@@ -35,16 +39,22 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
         }
     }
 
+    /**
+     * Devuelve los contadores a cero.
+     */
     function reiniciaTiempo() {
         contador_minutos = 0;
         contador_segundos = 0;
     }
 
 
-    //haremos un for en donde colocaremos las tablas de una forma aleatoria
+    /**
+     * Genera aleatoriamente y sin repetir los números del tablero.
+     */
     function generar() {
         reiniciaTiempo();
         arreglo_numeros.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+        //for en donde colocaremos las tablas de una forma aleatoria
         for (j = 1; j <= 16; j++) {
             if (document.getElementById("p" + j)
                     .getAttribute("class").indexOf("vacio") < 0) {
@@ -69,7 +79,10 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
     };
 
     //---------------trabajando con javascript---------------------------
-
+    /**
+     * Decide si se ha ganado verificando que las celdas estén ordenadas
+     * de menor a mayor.
+     */
     function verificarGanarJuego() {
         filasCorrectas = 0;
         if (document.getElementById("p1").innerText === "1" &&
