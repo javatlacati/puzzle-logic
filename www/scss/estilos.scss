@@ -113,7 +113,7 @@ body{
             color: nth( $colores-letras, random( length( $colores-letras) ) );
         }
     }
-    
+
     :nth-of-type(4){
         :nth-child(1){
             color: nth( $colores-letras, random( length( $colores-letras) ) );
@@ -169,14 +169,14 @@ div{
 }
 
 div{
-    #mismovimientos{
+    .mismovimientos{
         border:6px solid $cafe;	
         background-color: #F9F2EC;
         span{
             font-weight: bold;
             font-size: 25px;
             color: $cafe;
-
+            margin-top:10px;
         }
     }
 }
