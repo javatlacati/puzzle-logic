@@ -22,11 +22,6 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
     }
     generar();
 
-    $scope.init = function () {
-        $scope.nuevo();
-    };
-
-
     /**
      * Controla el avance del tiempo.
      * Cada segundo actualiza los valores de los contadores de minutos y 
@@ -81,7 +76,7 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
         reiniciaTiempo();
         arreglo_numeros.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
         //for en donde colocaremos las tablas de una forma aleatoria
-        for (let j: number = 1;j <= 16;j++) {
+        for (let j: number = 1;j < 17;j++) {
             if (document.getElementById(`p${j}`)
                 .getAttribute("class").indexOf("vacio") < 0) {
                 //GENERAR ALEATORIO
@@ -89,7 +84,7 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
                     (Math.random() * (arreglo_numeros.length - 1))
                 );
                 let num = arreglo_numeros[aleatorio];
-                arreglo_numeros.splice(aleatorio, 1);
+                arreglo_numeros.splice(aleatorio, 0);
                 //colocamos el numero
                 document.getElementById(`p${j}`).innerText = num;
             }
