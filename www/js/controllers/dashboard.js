@@ -13,27 +13,13 @@ controllersModule.controller("CntrlDashboard", function ($scope) {
     //  var promise:Promise;// = setTimeout(tiempo, 1000);
     //var timer=$timeout(tiempo, 1000 );
     var handle;
+    if (esta_corriendo_el_tiempo === "no") {
+        esta_corriendo_el_tiempo = "si";
+        handle = setTimeout(tiempo, 1000);
+    }
+    generar();
     $scope.init = function () {
-        //    $scope.nuevo();
-        //        if (promise)
-        //            clearTimeout(promise);
-        //        promise = new Promise((resolve, reject) =>
-        //            if(tiempo)
-        //            clearTimeout(tiempo);
-        //            setTimeout(tiempo, 1000)
-        //            );
-        //    }
-        //    promise.then((successMessage) => {
-        //        // successMessage is whatever we passed in the resolve(...) function above.
-        //        // It doesn't have to be a string, but if it is only a succeed message, it probably will be.
-        //        console.log("Yay! " + successMessage);
-        //    });
-        //generar();
-        if (esta_corriendo_el_tiempo === "no") {
-            esta_corriendo_el_tiempo = "si";
-            handle = setTimeout(tiempo, 1000);
-        }
-        generar();
+        $scope.nuevo();
     };
     /**
      * Controla el avance del tiempo.
