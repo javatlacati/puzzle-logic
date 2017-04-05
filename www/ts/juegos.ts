@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 $(document).ready(function () {
 
     //utilizar solo 15 numeros
